@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Clients</title>
+</head>
+<body>
+<div>
+    <form method="post" action="#" th:action="@{/clients}">
+        <input type="text" name="firstName" placeholder="Введите имя"/>
+        <input type="text" name="secondName" placeholder="фамилию">
+        <input type="number" name="telephone" placeholder="телефон">
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+<div>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>firstName</td>
+            <td>secondName</td>
+            <td>telephone</td>
+            <td></td>
+        </tr>
+
+        <tr th:each="client : ${clients}">
+
+            <td th:text="${client.clientId}"></td>
+            <td th:text="${client.firstName}"></td>
+            <td th:text="${client.secondName}"></td>
+            <td th:text="${client.telephone}"></td>
+            <td> <form  th:value="${client}" method="post" action="#" th:action="see" modelAttri>
+                <input type="hidden" name="id" th:value= "${client.clientId}">
+                <button type="submit">Просмотреть</button>
+            </form></td>
+        </tr>
+    </table>
+</div>
+<a href="/">Go to Main</a>
+</body>
+</html>

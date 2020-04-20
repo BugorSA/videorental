@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DVD</title>
+</head>
+<body>
+<div>
+    <form method="post" action="#" th:action="@{/dvds}">
+        <input type="number" name="id_client" placeholder="Введите id клиента"/>
+        <input type="text" name="russianName" placeholder="рускоязычное название">
+        <input type="text" name="englishName" placeholder="оригнальное название">
+        <input type="number" name="year" placeholder="Введите год выхода"/>
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+<table>
+    <tr>
+        <td>id</td>
+        <td>russianName</td>
+        <td>englishName</td>
+        <td>year</td>
+        <td>client`s name</td>
+    </tr>
+
+<tr th:each="dvd : ${dvds}">
+
+    <td th:text="${dvd.id}"></td>
+    <td th:text="${dvd.russianName}"></td>
+    <td th:text="${dvd.englishName}"></td>
+    <td th:text="${dvd.year}"></td>
+    <td th:text="${dvd.client.getFullName()}"></td>
+<!--    <td th:text="${dvd.russianName}? #{true} : #{false}">yes</td>-->
+</tr>
+</table>
+<a href="/">Go to Main</a>
+</body>
+</html>

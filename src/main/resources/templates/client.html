@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${nameTitle}]]</title>
+</head>
+<body>
+<tr>
+    <td th:text="${client.clientId}"></td>
+    <td th:text="${client.firstName}"></td>
+    <td th:text="${client.secondName}"></td>
+    <td th:text="${client.telephone}"></td>
+</tr>
+
+<table>
+    <tr>
+        <td>id</td>
+        <td>russianName</td>
+        <td>englishName</td>
+        <td>year</td>
+        <td></td>
+    </tr>
+
+    <tr th:each="dvd : ${dvds}">
+
+        <td th:text="${dvd.id}"></td>
+        <td th:text="${dvd.russianName}"></td>
+        <td th:text="${dvd.englishName}"></td>
+        <td th:text="${dvd.year}"></td>
+        <td><a th:href="greeting" th:text="Подробнее"></a></td>
+        <!--    <td th:text="${dvd.russianName}? #{true} : #{false}">yes</td>-->
+    </tr>
+</table>
+<div>
+    <form method="post" action="/dvds">
+        <input type="hidden" name="id_client" th:value="${client.clientId}"/>
+        <input type="text" name="russianName" placeholder="рускоязычное название">
+        <input type="text" name="englishName" placeholder="оригнальное название">
+        <input type="number" name="year" placeholder="Введите год выхода"/>
+        <button type="submit" th:value="${client.clientId}">Добавить</button>
+    </form>
+</div>
+<a href="/">Go to Main</a>
+</body>
+</html>
