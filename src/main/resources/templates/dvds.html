@@ -6,6 +6,11 @@
 </head>
 <body>
 <div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+<div>
     <form method="post" action="#" th:action="@{/dvds}">
         <input type="number" name="id_client" placeholder="Введите id клиента"/>
         <input type="text" name="russianName" placeholder="рускоязычное название">

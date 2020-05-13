@@ -5,6 +5,11 @@
     <title>[[${nameTitle}]]</title>
 </head>
 <body>
+<div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
 <tr>
     <td th:text="${client.clientId}"></td>
     <td th:text="${client.firstName}"></td>
