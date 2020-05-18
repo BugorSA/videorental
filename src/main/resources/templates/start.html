@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+ lang="en">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+</head>
+<body>
+<div>
+    <form action="/login" th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
+<p><a href="/dvds">DVDs</a></p>
+<p><a href="/clients">Clients</a></p>
+</body>
+</html>

@@ -20,4 +20,9 @@ public class GreetingController {
         return "greeting";
     }
 
+    @GetMapping("/start")
+    public String start(){
+        return "start";
+    }
+
 }
