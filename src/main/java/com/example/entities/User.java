@@ -16,6 +16,34 @@ public class User {
     private String password;
     private boolean active;
 
+    public String getGoogleUsername() {
+        return googleUsername;
+    }
+
+    public void setGoogleUsername(String googleUsername) {
+        this.googleUsername = googleUsername;
+    }
+
+    public String getGoogleName() {
+        return googleName;
+    }
+
+    public void setGoogleName(String googleName) {
+        this.googleName = googleName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    private String googleUsername;
+    private String googleName;
+    private String name;
+
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
