@@ -28,6 +28,7 @@ import org.springframework.security.oauth2.provider.OAuth2Request;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 import org.springframework.util.Assert;
 
+
 public class CustomUserInfoTokenServices implements ResourceServerTokenServices {
     protected final Log logger = LogFactory.getLog(this.getClass());
     private final String userInfoEndpointUrl;
